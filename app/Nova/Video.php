@@ -35,6 +35,7 @@ class Video extends Resource
      */
     public static $search = [
         'id',
+        'title'
     ];
 
     /**

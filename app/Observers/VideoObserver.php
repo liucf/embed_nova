@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Jobs\UpdateVideo;
 use App\Models\Video;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -29,9 +30,8 @@ class VideoObserver
      * @return void
      */
     public function updated(Video $video)
-    {
-        Log::info(env('CLIENT_URL').'/api/revalidate?secret='.$this->MY_SECRET_TOKEN.'&pageslug='.$video->slug);
-        return Http::get(env('CLIENT_URL').'/api/revalidate?secret='.$this->MY_SECRET_TOKEN.'&pageslug='.$video->slug);
+    {   
+        UpdateVideo::dispatch($video)->delay(now()->addSeconds(1));
     }
 
     /**
