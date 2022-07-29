@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->bigInteger('views')->default(0);
-            $table->string('thumb')->default("");
+            $table->string('thumb')->default('');
             $table->integer('positionshit')->default(100);
         });
     }

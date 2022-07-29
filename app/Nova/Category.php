@@ -30,7 +30,7 @@ class Category extends Resource
      */
     public static $search = [
         'id',
-        'name'
+        'name',
     ];
 
     /**

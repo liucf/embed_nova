@@ -3,13 +3,13 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Slug;
-use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Slug;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Video extends Resource
@@ -35,7 +35,7 @@ class Video extends Resource
      */
     public static $search = [
         'id',
-        'title'
+        'title',
     ];
 
     /**

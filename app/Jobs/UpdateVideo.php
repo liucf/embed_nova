@@ -4,20 +4,19 @@ namespace App\Jobs;
 
 use App\Models\Video;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class UpdateVideo implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $video;
-    public $MY_SECRET_TOKEN="2S1Oml15Pz";
+
+    public $MY_SECRET_TOKEN = '2S1Oml15Pz';
 
     /**
      * Create a new job instance.

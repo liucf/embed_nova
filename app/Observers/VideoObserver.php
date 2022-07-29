@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Log;
 
 class VideoObserver
 {
+    public $MY_SECRET_TOKEN = '2S1Oml15Pz';
 
-    public $MY_SECRET_TOKEN="2S1Oml15Pz";
     /**
      * Handle the Video "created" event.
      *
@@ -20,6 +20,7 @@ class VideoObserver
     public function created(Video $video)
     {
         Log::info(env('CLIENT_URL').'/api/revalidate?secret='.$this->MY_SECRET_TOKEN.'&pageslug='.$video->slug);
+
         return Http::get(env('CLIENT_URL').'/api/revalidate?secret='.$this->MY_SECRET_TOKEN.'&pageslug='.$video->slug);
     }
 
@@ -30,7 +31,7 @@ class VideoObserver
      * @return void
      */
     public function updated(Video $video)
-    {   
+    {
         UpdateVideo::dispatch($video)->delay(now()->addSeconds(1));
     }
 
