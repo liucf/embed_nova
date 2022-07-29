@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/videos', function (Request $request) {
-    $paginate = Video::select(['id', 'youtubeID', 'title', 'slug', 'created_at', 'views'])->latest()->paginate(env('PAGINATION_NUMBER'))->toArray();
+    $paginate = Video::select(['id', 'youtubeID', 'title', 'slug', 'created_at', 'views'])->latest()->paginate(env('PAGINATION_NUMBER', 18))->toArray();
     foreach ($paginate['links'] as $index => $item) {
         $paginate['links'][$index]['url'] = str_replace(env('APP_URL').'/api/videos', '/', $item['url']);
     }
