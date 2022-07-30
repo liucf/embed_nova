@@ -26,7 +26,7 @@
 	<body>
 		
 		<main>
-		
+            <h1>The video is on the top, so user do NOT need scroll down the browser. At this situation, the mobile browser tab will show!</h1>
 			<div class="sections">
 			
 				<section>
